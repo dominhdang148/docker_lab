@@ -1,0 +1,163 @@
+PowerShell 7.3.6
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker build -t hello-image
+"docker build" requires exactly 1 argument.
+See 'docker build --help'.
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Build an image from a Dockerfile
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker build -t hello-image .
+error during connect: In the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect.: Post "http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=hello-image&target=&ulimits=null&version=1": open //./pipe/docker_engine: The system cannot find the file specified.
+PS D:\BaiTap\CongNgheMOi\docker\hello> code .
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker build -t hello-image .
+[+] Building 160.3s (11/11) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.1s
+ => => transferring dockerfile: 152B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                        12.3s
+ => [auth] library/node:pull token for registry-1.docker.io                                                        0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461a  139.2s
+ => => resolve docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa   0.0s
+ => => sha256:2cafa3fbb0b6529ee4726b4f599ec27ee557ea3dea7019182323b3779959927f 2.21kB / 2.21kB                     0.0s
+ => => sha256:2ff1d7c41c74a25258bfa6f0b8adb0a727f84518f55f65ca845ebc747976c408 50.45MB / 50.45MB                  45.2s
+ => => sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa 776B / 776B                         0.0s
+ => => sha256:1d12470fa662a2a5cb50378dcdc8ea228c1735747db410bbefb8e2d9144b5452 7.51kB / 7.51kB                     0.0s
+ => => sha256:b253aeafeaa7e0671bb60008df01de101a38a045ff7bc656e3b0fbfc7c05cca5 7.86MB / 7.86MB                     8.7s
+ => => sha256:3d2201bd995cccf12851a50820de03d34a17011dcbb9ac9fdf3a50c952cbb131 10.00MB / 10.00MB                  11.8s
+ => => sha256:1de76e268b103d05fa8960e0f77951ff54b912b63429c34f5d6adfd09f5f9ee2 51.88MB / 51.88MB                  65.2s
+ => => sha256:d9a8df5894511ce28a05e2925a75e8a4acbd0634c39ad734fdfba8e23d1b1569 191.85MB / 191.85MB               113.8s
+ => => sha256:6f51ee005deac0d99898e41b8ce60ebf250ebe1a31a0b03f613aec6bbc9b83d8 4.19kB / 4.19kB                    51.0s
+ => => extracting sha256:2ff1d7c41c74a25258bfa6f0b8adb0a727f84518f55f65ca845ebc747976c408                         14.4s
+ => => sha256:5f32ed3c3f278edda4fc571c880b5277355a29ae8f52b52cdf865f058378a590 35.24MB / 35.24MB                  79.5s
+ => => extracting sha256:b253aeafeaa7e0671bb60008df01de101a38a045ff7bc656e3b0fbfc7c05cca5                          2.1s
+ => => extracting sha256:3d2201bd995cccf12851a50820de03d34a17011dcbb9ac9fdf3a50c952cbb131                          1.8s
+ => => sha256:0c8cc2f24a4dcb64e602e086fc9446b0a541e8acd9ad72d2e90df3ba22f158b3 2.29MB / 2.29MB                    72.4s
+ => => extracting sha256:1de76e268b103d05fa8960e0f77951ff54b912b63429c34f5d6adfd09f5f9ee2                          9.6s
+ => => sha256:0d27a8e861329007574c6766fba946d48e20d2c8e964e873de352603f22c4ceb 450B / 450B                        73.1s
+ => => extracting sha256:d9a8df5894511ce28a05e2925a75e8a4acbd0634c39ad734fdfba8e23d1b1569                         19.4s
+ => => extracting sha256:6f51ee005deac0d99898e41b8ce60ebf250ebe1a31a0b03f613aec6bbc9b83d8                          0.1s
+ => => extracting sha256:5f32ed3c3f278edda4fc571c880b5277355a29ae8f52b52cdf865f058378a590                          4.0s
+ => => extracting sha256:0c8cc2f24a4dcb64e602e086fc9446b0a541e8acd9ad72d2e90df3ba22f158b3                          0.4s
+ => => extracting sha256:0d27a8e861329007574c6766fba946d48e20d2c8e964e873de352603f22c4ceb                          0.0s
+ => [internal] load build context                                                                                  0.2s
+ => => transferring context: 2.07MB                                                                                0.2s
+ => [2/5] WORKDIR /app                                                                                             1.5s
+ => [3/5] COPY package.json .                                                                                      0.1s
+ => [4/5] RUN npm install                                                                                          6.4s
+ => [5/5] COPY . .                                                                                                 0.2s
+ => exporting to image                                                                                             0.3s
+ => => exporting layers                                                                                            0.3s
+ => => writing image sha256:3abb01aeef43ccf1f8d82bb29febbbd6518dbc40f7a2cc7962a73b8f38e04acf                       0.0s
+ => => naming to docker.io/library/hello-image                                                                     0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
+hello-image   latest    3abb01aeef43   32 seconds ago   918MB
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker run --name hello-app -p 3000:3000 hello-image
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS                        PORTS     NAMES
+7c985daa54aa   hello-image   "docker-entrypoint.s…"   2 minutes ago   Exited (137) 20 seconds ago             hello-app
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
+hello-image   latest    3abb01aeef43   11 minutes ago   918MB
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker containers
+docker: 'containers' is not a docker command.
+See 'docker --help'
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker container
+
+Usage:  docker container COMMAND
+
+Manage containers
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  inspect     Display detailed information on one or more containers
+  kill        Kill one or more running containers
+  logs        Fetch the logs of a container
+  ls          List containers
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  prune       Remove all stopped containers
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  run         Run a command in a new container
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker container COMMAND --help' for more information on a command.
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker rmi 3abb01aeef43
+Error response from daemon: conflict: unable to delete 3abb01aeef43 (must be forced) - image is being used by stopped container 7c985daa54aa
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker rm 7c985daa54aa
+7c985daa54aa
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker rmi -f 3abb01aeef43
+Untagged: hello-image:latest
+Deleted: sha256:3abb01aeef43ccf1f8d82bb29febbbd6518dbc40f7a2cc7962a73b8f38e04acf
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker build -t hello-image .
+[+] Building 5.8s (11/11) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 152B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                         5.3s
+ => [auth] library/node:pull token for registry-1.docker.io                                                        0.0s
+ => [internal] load build context                                                                                  0.1s
+ => => transferring context: 28.57kB                                                                               0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa   0.0s
+ => CACHED [2/5] WORKDIR /app                                                                                      0.0s
+ => CACHED [3/5] COPY package.json .                                                                               0.0s
+ => CACHED [4/5] RUN npm install                                                                                   0.0s
+ => [5/5] COPY . .                                                                                                 0.2s
+ => exporting to image                                                                                             0.1s
+ => => exporting layers                                                                                            0.1s
+ => => writing image sha256:7540e9ca60a2c7105172db12f2ad809504ed983f36d6ad6c47dfda3c73618f09                       0.0s
+ => => naming to docker.io/library/hello-image                                                                     0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker scan
+Docker Scan relies upon access to Snyk, a third party provider, do you consent to proceed using Snyk? (y/N)
+y
+Usage:  docker scan [OPTIONS] IMAGE
+
+A tool to scan your images
+
+Options:
+      --accept-license    Accept using a third party scanning provider
+      --dependency-tree   Show dependency tree with scan results
+      --exclude-base      Exclude base image from vulnerability scanning
+                          (requires --file)
+  -f, --file string       Dockerfile associated with image, provides more
+                          detailed results
+      --group-issues      Aggregate duplicated vulnerabilities and group
+                          them to a single one (requires --json)
+      --json              Output results in JSON format
+      --login             Authenticate to the scan provider using an
+                          optional token (with --token), or web base
+                          token if empty
+      --reject-license    Reject using a third party scanning provider
+      --severity string   Only report vulnerabilities of provided level
+                          or higher (low|medium|high)
+      --token string      Authentication token to login to the third
+                          party scanning provider
+      --version           Display version of the scan plugin
+"docker scan" requires exactly 1 argument
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker run --name hello-app -p 3000:3000 hello-image
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED              SIZE
+hello-image   latest    7540e9ca60a2   About a minute ago   918MB
+PS D:\BaiTap\CongNgheMOi\docker\hello> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS D:\BaiTap\CongNgheMOi\docker\hello>

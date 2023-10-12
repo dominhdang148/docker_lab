@@ -1,0 +1,50 @@
+PS D:\BaiTap\CongNgheMOi\docker\goal> docker build -t goal-image .
+[+] Building 33.7s (11/11) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.2s
+ => => transferring dockerfile: 156B                                                                               0.1s
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/node:12                                                         4.3s
+ => [auth] library/node:pull token for registry-1.docker.io                                                        0.0s
+ => [internal] load build context                                                                                 11.8s
+ => => transferring context: 13.68MB                                                                              11.7s
+ => [1/5] FROM docker.io/library/node:12@sha256:01627afeb110b3054ba4a1405541ca095c8bfca1cb6f2be9479c767a2711879e   0.0s
+ => CACHED [2/5] WORKDIR /app                                                                                      0.0s
+ => [3/5] COPY package.json /app                                                                                   0.2s
+ => [4/5] RUN npm install                                                                                         15.7s
+ => [5/5] COPY . /app                                                                                              0.6s
+ => exporting to image                                                                                             0.8s
+ => => exporting layers                                                                                            0.7s
+ => => writing image sha256:a83a2f2761b74a582c9b20b644c03e8a2ac51eee10d4e36c8da3dff423d7f757                       0.0s
+ => => naming to docker.io/library/goal-image                                                                      0.0s
+PS D:\BaiTap\CongNgheMOi\docker\goal> docker run --name goal-app -p 80:80 goal-image
+fasdfasd
+fasdfsd
+PS D:\BaiTap\CongNgheMOi\docker\goal> docker tag goal-image:latest dominhdang148/goal:latest
+PS D:\BaiTap\CongNgheMOi\docker\goal> docker images
+REPOSITORY           TAG       IMAGE ID       CREATED         SIZE
+dominhdang148/goal   latest    a83a2f2761b7   5 minutes ago   948MB
+goal-image           latest    a83a2f2761b7   5 minutes ago   948MB
+PS D:\BaiTap\CongNgheMOi\docker\goal> docker login
+Authenticating with existing credentials...
+Login Succeeded
+
+Logging in with your password grants your terminal complete access to your account.
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+PS D:\BaiTap\CongNgheMOi\docker\goal> docker push dominhdang148/goal:latest
+The push refers to repository [docker.io/dominhdang148/goal]
+2f73f1ae2a97: Pushed
+663e978f9ff7: Pushed
+d0f03af9f41f: Pushed
+87e2f0bace2a: Pushed
+586c0b414da7: Mounted from library/node
+0bfd290f2c17: Mounted from library/node
+6d75cd01c26c: Mounted from library/node
+95904c181913: Mounted from library/node
+df69bfa94785: Mounted from library/node
+f35deb8d96fc: Mounted from library/node
+f6c2459e2059: Mounted from library/node
+f8323fb3a55c: Mounted from library/node
+2f4dc9775f33: Mounted from library/node
+latest: digest: sha256:5a8e8e271e25c03bd7d6940d197fff60e36865a91f3ab0043b3ed780ce80f399 size: 3051
+PS D:\BaiTap\CongNgheMOi\docker\goal>
